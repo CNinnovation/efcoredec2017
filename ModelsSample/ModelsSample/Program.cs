@@ -10,7 +10,19 @@ namespace ModelsSample
         {
             //CreateDatabase();
             //CreateMenus();
-            TrackingDemo();
+            // TrackingDemo();
+            UpdateDemo();
+        }
+
+        private static void UpdateDemo()
+        {
+            using (var context = new MenusContext())
+            {
+                Menu m1 = context.Menus.FirstOrDefault();
+                m1.Subtitle = "changed";
+                context.SaveChanges();
+
+            }
         }
 
         private static void TrackingDemo()

@@ -33,5 +33,10 @@ namespace ModelsSample
             base.OnConfiguring(optionsBuilder);
             optionsBuilder.UseSqlServer(ConnectionString);
         }
+
+        public override int SaveChanges()
+        {
+            return base.SaveChanges();
+        }
     }
 }

@@ -9,9 +9,9 @@ namespace TransactionSamples
     {
         static void Main()
         {
-            Setup();
-            AddTwoRecordsWithOneTx();
-            AddTwoRecordsWithTwoTx();
+            //Setup();
+            //AddTwoRecordsWithOneTx();
+            //AddTwoRecordsWithTwoTx();
             TwoSaveChangesWithOneTx();
         }
 
