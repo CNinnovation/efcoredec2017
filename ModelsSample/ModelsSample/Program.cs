@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
+using System.Linq;
 
 namespace ModelsSample
 {
@@ -6,8 +8,33 @@ namespace ModelsSample
     {
         static void Main(string[] args)
         {
-            CreateDatabase();
-            CreateMenus();
+            //CreateDatabase();
+            //CreateMenus();
+            TrackingDemo();
+        }
+
+        private static void TrackingDemo()
+        {
+            int a = 3;
+            string s1 = string.Format("abc {0}", a);
+            string s2 = $"abc {a}";
+            FormattableString s3 = $"abc {a}";
+
+
+            using (var context = new MenusContext())
+            {
+                context.ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
+                var m1 = context.Menus.Where(m => m.Title.StartsWith("Gemüse")).FirstOrDefault();
+                var m2 = context.Menus.Where(m => m.Subtitle.StartsWith("mit")).FirstOrDefault();
+                if (m1 == m2)
+                {
+                    Console.WriteLine("the same object");
+                }
+                else
+                {
+                    Console.WriteLine("not the same object");
+                }
+            }
         }
 
         //private static void CreateMenus()

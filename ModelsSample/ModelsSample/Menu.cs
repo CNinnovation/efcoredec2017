@@ -9,6 +9,10 @@ namespace ModelsSample
     [Table("MyMenus")]
     public class Menu
     {
+        public Menu()
+        {
+
+        }
         public Menu(string title, string subtitle, MenuCard menuCard)
         {
             _title = title;
