@@ -1,0 +1,13 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace ModelsSample
+{
+    public class MenuCard
+    {
+        public int MenuCardId { get; set; }
+        public string Title { get; set; }
+        public List<Menu> Menus { get; set; }
+    }
+}
