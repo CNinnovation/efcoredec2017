@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace TablePerHierarchyWithConventions
+﻿namespace TablePerHierarchyWithConventions
 {
     public class Payment
     {
