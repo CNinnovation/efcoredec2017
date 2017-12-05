@@ -22,8 +22,10 @@ namespace ModelsSample
         {
             modelBuilder.HasDefaultSchema("kantine");
             // modelBuilder.Entity<Menu>().ToTable("OtherMenus");
-            modelBuilder.Entity<Menu>().Property(m => m.Title).HasField(TitleField);
-            modelBuilder.Entity<Menu>().Property(m => m.Subtitle).HasMaxLength(60).IsRequired(false);
+            //modelBuilder.Entity<Menu>().Property(m => m.Title).HasField(TitleField);
+            //modelBuilder.Entity<Menu>().Property(m => m.Subtitle).HasMaxLength(60).IsRequired(false);
+
+            modelBuilder.ApplyConfiguration(new MenuConfiguration());
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
