@@ -32,6 +32,12 @@ namespace Sample1
             }
         }
 
+        public IEnumerable<Book> QueryBooks()
+        {
+            var books = _context.Books.Where(b => b.Publisher == "Wrox Press");
+            return books.ToList();
+        }
+
 
         public void CreateRecords()
         {
